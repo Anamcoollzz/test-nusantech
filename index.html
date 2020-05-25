@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <script>
+        function cetakFishBash(angka){
+            let text = ''
+            let textConsole = ''
+            for(let i=1; i<=angka; i++){
+                if(i % 15 == 0){
+                    text = 'fish bash'
+                }else if(i % 5 == 0){
+                    text = 'bash'
+                }else if(i % 3 == 0){
+                    text = 'fish'
+                }else {
+                    text = i
+                }
+                textConsole += text+"\n"
+            }
+            console.log(textConsole)
+        }
+        // cetakFishBash(3)
+        // cetakFishBash(5)
+        cetakFishBash(15)
+
+        function bubbleSort(data, asc = true){
+            for(let i=0; i<=data.length; i++){
+                for(let j=0; j< (data.length - 1); j++){
+                    let temp = data[j]
+                    let kondisi = null
+                    if(asc){
+                        kondisi = data[j+1] < data[j]
+                    }else{
+                        kondisi = data[j+1] > data[j]
+                    }
+                    if(kondisi){
+                        data[j]   = data[j+1];
+                        data[j+1] = temp
+                    }
+                }
+            }
+        }
+        const dataArray = [
+            2,3,1,4,6,9,7,8
+        ]
+        console.log('data awal', dataArray)
+        bubbleSort(dataArray)
+        console.log('data sesudah diurut asc', dataArray)
+        bubbleSort(dataArray, false)
+        console.log('data sesudah diurut desc', dataArray)
+
+        function samaTidakYa(kataKataBijak){
+            let reverseKataKataBijak = ''
+            for(let i=kataKataBijak.length-1; i>=0; i--){
+                reverseKataKataBijak += kataKataBijak[i]
+            }
+            // console.log(reverseKataKataBijak)
+            return reverseKataKataBijak == kataKataBijak
+        }
+        let kata1 = 'anamkun'
+        console.log(kata1, samaTidakYa(kata1))
+        let kata2 = 'katak'
+        console.log(kata2, samaTidakYa(kata2))
+        let kata3 = 'babab'
+        console.log(kata3, samaTidakYa(kata3))
+        let kata4 = 'mimim'
+        console.log(kata4, samaTidakYa(kata4))
+    </script>
+</body>
+</html>
